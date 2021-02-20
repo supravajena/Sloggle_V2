@@ -14,7 +14,8 @@ def hire_freelancer(request):
 
 
 def post_project(request):
-    return render(request, 'SloggleUI/post_project.html')
+    language_list = ["C", "C++", "Python"]
+    return render(request, 'SloggleUI/post_project.html', {"language_list": language_list})
 
 
 def about(request):
@@ -23,3 +24,7 @@ def about(request):
 
 def contact(request):
     return render(request, 'SloggleUI/contact.html')
+
+
+def post_project_details(request):
+    return render(request, 'SloggleUI/post_project_details.html')

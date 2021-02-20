@@ -200,3 +200,7 @@ footer .list-group-item:first-child {
 .highlighted-on-hover:hover {
     color: #00ffff;
 }
+
+.language-list .list-group-item {
+    background-color: transparent;
+}

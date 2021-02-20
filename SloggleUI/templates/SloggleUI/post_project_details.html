@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Project Details{% endblock %}
+
+{% block content %}
+    <main>
+        <!-- page title -->
+        <div class="container mt-3">
+            <p class="display-5" style="color:white" >Let Us Know About Your Project</p>
+            <p style ="color:white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur placeat eveniet nulla debitis totam nemo quidem aut adipisci maiores dignissimos! Ratione asperiores optio minus eveniet placeat dicta ducimus amet officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime vero eius officiis esse rerum a nesciunt officia porro quaerat at, aspernatur repellat iusto, velit eaque, quidem sed ducimus reprehenderit nisi.</p>
+        </div>
+
+        <!-- search skills -->
+        <div class="container mt-5">
+            <div class="mb-3">
+                <label for="projectName" class="form-label" style="color:white">Project Name</label>
+                <input type="text" class="form-control" id="projectName" placeholder="e.g. Website Development">
+            </div>
+            <div class="mb-3">
+                <label for="projectDescription" class="form-label" style="color:white">Project Description</label>
+                <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="file" id="projectFile">
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </div>
+
+    </main>
+{% endblock %}

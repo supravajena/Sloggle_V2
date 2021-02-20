@@ -3,9 +3,32 @@
 {% block title %}Post Project{% endblock %}
 
 {% block content %}
-    <main style="height: 1000px;">
-        <div class="container py-5">
-            Post A Project is working.
+    <main>
+        <div class="container my-4">
+            <div class="card card-light" id="language-list">
+                <div class="card-header">Select a language:</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <ul class="list-group list-group-flush language-list">
+                                {% for language in language_list %}
+                                    <li class="list-group-item"><a href="{% url 'post_project_details' %}">{{ language }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-light d-none" id="project-posting-form">
+                <div class="card-body">
+                    <div class="card-title">
+                        Upload A Project
+                    </div>
+                    <div class="card-text">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 {% endblock %}
