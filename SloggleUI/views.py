@@ -15,3 +15,11 @@ def hire_freelancer(request):
 
 def post_project(request):
     return render(request, 'SloggleUI/post_project.html')
+
+
+def about(request):
+    return render(request, 'SloggleUI/about.html')
+
+
+def contact(request):
+    return render(request, 'SloggleUI/contact.html')
