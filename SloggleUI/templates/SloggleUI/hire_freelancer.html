@@ -4,8 +4,68 @@
 
 {% block content %}
     <main class="container-fluid py-3">
-        <div class="row g-3">
+        <div class="container">
+            {# page title #}
+            <div class="display-6 mb-3">
+                Hire A Freelancer
+            </div>
+
+            {# skill search #}
+            <div class="row g-3 mb-3">
+                <div class="col-11">
+                    <input type="text" class="form-control" id="required-skills" placeholder="Required Skills">
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+
+            {# result area #}
+            <div class="row g-3 mb-3">
+                <div class="col-3">
+                    <div class="container">
+
+                    </div>
+                </div>
+
+                {# user result card #}
+                <div class="col-3">
+                    <div class="card card-light" style="height: 60vh; overflow-y: auto;">
+                        <div class="card-img-top">
+                            <div style="margin: 1.5rem auto; height: 150px; width: 150px; border-radius: 50%; background-color: #5b6773;"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title text-center text-decoration pb-2" style="font-weight: 700; border-bottom: 1px solid #f4f4f4;">Jane Doe</div>
+                            <div class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, doloribus eius error excepturi expedita illo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-light" style="height: 60vh; overflow-y: auto;">
+                        <div class="card-img-top">
+                            <div style="margin: 1.5rem auto; height: 150px; width: 150px; border-radius: 50%; background-color: #5b6773;"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title text-center text-decoration pb-2" style="font-weight: 700; border-bottom: 1px solid #f4f4f4;">Jane Doe</div>
+                            <div class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, doloribus eius error excepturi expedita illo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-light" style="height: 60vh; overflow-y: auto;">
+                        <div class="card-img-top">
+                            <div style="margin: 1.5rem auto; height: 150px; width: 150px; border-radius: 50%; background-color: #5b6773;"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title text-center text-decoration pb-2" style="font-weight: 700; border-bottom: 1px solid #f4f4f4;">Jane Doe</div>
+                            <div class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, doloribus eius error excepturi expedita illo</div>
+                        </div>
+                    </div>
+                </div>
 
 
+
+            </div>
         </div>
+    </main>
 {% endblock %}

@@ -77,6 +77,10 @@ header {
     background-color: #3a424a;
 }
 
+.card-light {
+    background-color: #495057;
+}
+
 .card-lighter {
     background-color: #5b6773;
 }
@@ -90,7 +94,7 @@ header {
     border-width: 2px;
 }
 
-.card-img-top {
+.dummy-card-image {
     height: 200px;
     background-image: url("./placeholder-img-01.jpg");
     background-size: cover;
