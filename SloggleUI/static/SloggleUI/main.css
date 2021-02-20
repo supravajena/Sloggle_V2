@@ -196,3 +196,7 @@ footer .list-group-item:first-child {
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.highlighted-on-hover:hover {
+    color: #00ffff;
+}
