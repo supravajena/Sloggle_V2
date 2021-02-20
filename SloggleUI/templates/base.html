@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %} | Sloggle</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'SloggleUI/main.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" defer></script>
+    <script src="{% static 'SloggleUI/main.js' %}" defer></script>
+</head>
+<body class="bg-dark text-light">
+
+    {# header with login and signup button #}
+    <header class="shadow">
+        <nav class="navbar navbar-dark text-light">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div>
+                        <a href="{% url 'home' %}">
+                            <span class="highlighted-text">Slo</span>ggle
+                        </a>
+                    </div>
+                    <div class="title-subtext">
+                        Your Freelance Solution
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <ui class="nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fa fa-envelope icon"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-modal" style="margin-right: 1rem; width: 80px;">Login</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#signup-modal" style="width: 80px;">Signup</button>
+                        </li>
+                    </ui>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {# navigation, around site #}
+    <div class="container-fluid shadow secondary-navigation py-3">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{% url 'find_jobs' %}" class="nav-link">Find Jobs</a></li>
+                <li class="nav-item"><a href="{% url 'hire_freelancer' %}" class="nav-link">Freelancer</a></li>
+                <li class="nav-item"><a href="{% url 'post_project' %}" class="nav-link">Post A Project</a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    {# footer with sitemap #}
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="{% url 'home' %}">Sloggle</a></li>
+                        <li class="list-group-item"><a href="{% url 'hire_freelancer' %}">Freelancers</a></li>
+                        <li class="list-group-item"><a href="{% url 'post_project' %}">Projects</a></li>
+                        <li class="list-group-item"><a href="{% url 'find_jobs' %}">Find Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Terms and Conditions</li>
+                        <li class="list-group-item">Privacy Policy</li>
+                        <li class="list-group-item">Copyright Policy</li>
+                        <li class="list-group-item">Subscription</li>
+                    </ul>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="{% url 'home' %}">Sloggle</a></li>
+                        <li class="list-group-item">Help and Support</li>
+                        <li class="list-group-item">US (English)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="open-button" onclick="openForm()">Let's Chat</button>
+
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Chat</h1>
+
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+    {# modals #}
+    <div class="modal fade bg-dark" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Log In</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center" style="font-size: 5rem">
+                        <i class="fa fa-user-circle"></i>
+                    </div>
+                    <div class="row mt-4 mb-3">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <label for="user-email" class="col-form-label">Email</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="email" id="user-email" class="form-control">
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <label for="user-password" class="col-form-label">Password</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="password" id="user-password" class="form-control">
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success" style="width: 150px">
+                            Log In
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col">
+                        <hr>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3 mb-5">
+                    <button class="btn btn-primary">
+                        <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
+                        Log In with Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign Up Now</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center" style="font-size: 5rem">
+                        <i class="fa fa-user-circle"></i>
+                    </div>
+                    <div class="d-flex justify-content-center mb-5 mt-4">
+                        <button class="btn btn-primary" style="margin-right: 2rem">Hire A Freelancer</button>
+                        <button class="btn btn-primary ml-2">Be A Freelancer</button>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <label for="user-email" class="col-form-label">Email</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="email" id="user-email" class="form-control">
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <label for="user-password" class="col-form-label">Password</label>
+                        </div>
+                        <div class="col-7">
+                            <input type="password" id="user-password" class="form-control">
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-1"></div>
+                        <div class="col">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <label class="form-check-label" for="flexCheckDefault">
+                                I agree to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui?
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success" style="width: 150px">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col">
+                        <hr>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3 mb-5">
+                    <button class="btn btn-primary">
+                        <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
+                        Sign Up with Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

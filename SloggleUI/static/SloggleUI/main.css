@@ -1,0 +1,184 @@
+a:hover {
+    color: #00ffff;
+}
+
+header {
+    /* same color as the background, change this if your like */
+    background: #343a40;
+}
+
+.navbar-brand {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.navbar-brand a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.highlighted-text {
+    color: #00ffff;
+}
+
+.title-subtext {
+    margin-top: -10px;
+    padding-bottom: 0.5rem;
+
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+}
+
+.navbar .nav-link:hover {
+    background-color: #1b1e21 !important;
+}
+
+.secondary-navigation {
+    background-color: #495057;
+}
+
+.secondary-navigation .nav-link {
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #f4f4f4;
+    margin: auto 2rem;
+}
+
+.secondary-navigation .nav-link:first-child {
+    margin-left: 0px;
+}
+
+.hero-section-video {
+    width: 100%;
+    height: 400px !important;
+}
+
+.sloggle-commitment {
+    background-color: #495057;
+}
+
+.sloggle-commitment-btn {
+    width: 20%;
+
+    /* to adjust margins visually */
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: #3a424a;
+}
+
+.card-lighter {
+    background-color: #5b6773;
+}
+
+.text-muted {
+    color: #c6c6c6 !important;
+}
+
+.card-img-top {
+    height: 200px;
+    background-image: url("./placeholder-img-01.jpg");
+    background-size: cover;
+}
+
+footer {
+    box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.15) !important
+}
+
+footer a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+footer .list-group-item {
+    background: transparent;
+}
+
+footer .list-group-item:first-child {
+    font-weight: 700;
+}
+
+.modal-content {
+    background-color: #1b1e21;
+}
+
+.modal-title {
+    /*text-align: center;*/
+    margin: 0px auto;
+}
+
+/* Copied from chat.html */
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

@@ -1,0 +1,16 @@
+# IDE configurations
+.idea/
+
+# virtual env files
+venv/
+
+# DB files
+db.sqlite3
+
+# python caches
+Sloggle/__pycache__
+SloggleUI/__pycache__
+
+# migrations
+SloggleUI/migrations
+
