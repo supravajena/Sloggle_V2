@@ -80,6 +80,11 @@ header {
     color: #c6c6c6 !important;
 }
 
+.page-link {
+    border-color: #5b6773;
+    border-width: 2px;
+}
+
 .card-img-top {
     height: 200px;
     background-image: url("./placeholder-img-01.jpg");
