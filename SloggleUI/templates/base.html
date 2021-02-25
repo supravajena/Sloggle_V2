@@ -199,71 +199,61 @@
     </div>
 
     <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Sign Up Now</h5>
-                </div>
+
                 <div class="modal-body">
-                    <div class="d-flex justify-content-center" style="font-size: 5rem">
-                        <i class="fa fa-user-circle"></i>
-                    </div>
-                    <div class="d-flex justify-content-center mb-5 mt-4">
-                        <button class="btn btn-primary" style="margin-right: 2rem">Hire A Freelancer</button>
-                        <button class="btn btn-primary ml-2">Be A Freelancer</button>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-1"></div>
-                        <div class="col-3">
-                            <label for="user-email" class="col-form-label">Email</label>
-                        </div>
-                        <div class="col-7">
-                            <input type="email" id="user-email" class="form-control">
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-1"></div>
-                        <div class="col-3">
-                            <label for="user-password" class="col-form-label">Password</label>
-                        </div>
-                        <div class="col-7">
-                            <input type="password" id="user-password" class="form-control">
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-1"></div>
-                        <div class="col">
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                              <label class="form-check-label" for="flexCheckDefault">
-                                I agree to Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, qui?
-                              </label>
-                            </div>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-success" style="width: 150px">
-                            Sign Up
-                        </button>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col">
+                    <div class="container d-flex justify-content-center">
+                        <button style="width:auto; margin-right: 1rem;" id="hireFreelancerButton">Hire a freelancer</button>
+                        <button style="width:auto;" id="beFreelancerButton">Be a freelancer</button>
+                    </div>
+
+                    <div class="container d-none" id="signupForm">
+
+                        <h1 style="color:white;text-align:center">Join with Sloggle</h1>
+                        <p style="color:white;margin-top:10px; text-align: center;">Please fill in this form to create an account.</p>
                         <hr>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
 
-                <div class="d-flex justify-content-center mt-3 mb-5">
-                    <button class="btn btn-primary">
-                        <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
-                        Sign Up with Facebook
-                    </button>
+                        <form action="">
+                            <label for="email"><b style="color:white">Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
+
+                            <label for="psw"><b style="color:white">Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <label for="psw-repeat"><b style="color:white">Repeat Password</b></label>
+                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                            <label>
+                            <input type="checkbox" checked="checked" name="remember" style="color:white;margin-bottom:15px"> Remember me
+                            </label>
+
+                            <p style="color:white">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+{#                            <div class="clearfix"></div>#}
+
+                            <button type="button" class="cancelbtn" id="signupCancelButton">Cancel</button>
+                            <button type="submit" class="signupbtn">Sign Up</button>
+
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col">
+                                    <hr>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-3 mb-5">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
+                                    Sign Up with Facebook
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
