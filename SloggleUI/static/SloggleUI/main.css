@@ -134,16 +134,16 @@ footer .list-group-item:first-child {
 /* Copied from chat.html */
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
-  background-color: #555;
+  background-color: #000;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 23px;
+  bottom: 0px;
   right: 28px;
-  width: 280px;
+  width: 180px;
 }
 
 /* The popup chat - hidden by default */
@@ -291,4 +291,16 @@ hr {
   .cancelbtn, .signupbtn {
      width: 100%;
   }
+}
+
+.committmentCards {
+    margin: auto 1rem;
+}
+
+.committmentCards img {
+    width: 100%;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #000000;
 }

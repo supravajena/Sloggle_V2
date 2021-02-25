@@ -17,7 +17,7 @@
 
     {# header with login and signup button #}
     <header class="shadow">
-        <nav class="navbar navbar-dark text-light">
+        <nav class="navbar navbar-dark text-light" style="background-color: #000000">
             <div class="container">
                 <div class="navbar-brand">
                     <div>
@@ -104,16 +104,6 @@
             </div>
         </div>
         {# about bar #}
-        <div class="row text-center mt-4">
-            <div class="display-6">About Us</div>
-        </div>
-        <div class="row text-center my-2">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut itaque iusto pariatur reprehenderit, saepe sit. Delectus ducimus ea eius nulla optio repudiandae tempore. Ad culpa itaque quos velit voluptatibus.</p>
-            </div>
-            <div class="col-3"></div>
-        </div>
         <div class="text-center">
             <i class="fa fa-facebook p-2 highlighted-on-hover"></i>
             <i class="fa fa-twitter p-2 highlighted-on-hover"></i>
@@ -123,7 +113,7 @@
         </div>
         {# copyright bar #}
         <div class="text-center mt-4 pt-4 pb-3" style="background-color: #495057">
-            <p>Copyright &copy; Solggle Freelance, Designed By: NIRVIN IT PVT. LTD.</p>
+            <p>Copyright &copy; 2021 Solggle Consultancy PVT. LTD.</p>
         </div>
     </footer>
 
@@ -204,7 +194,11 @@
 
                 <div class="modal-body">
 
+                    <div class="container" id="makeYourChoice" style="text-align:center;">
+                        <h2>Make Your Choice</h2>
+                    </div>
                     <div class="container d-flex justify-content-center">
+
                         <button style="width:auto; margin-right: 1rem;" id="hireFreelancerButton">Hire a freelancer</button>
                         <button style="width:auto;" id="beFreelancerButton">Be a freelancer</button>
                     </div>
@@ -238,8 +232,9 @@
 
                             <div class="row">
                                 <div class="col-1"></div>
-                                <div class="col">
+                                <div class="col" style="padding-top: 1rem">
                                     <hr>
+                                    <span style="position: relative; bottom: 2.3rem; left: 18.5rem; padding: 0.3rem; border: 3px solid #fff; border-radius: 50%; background-color: #212529">OR</span>
                                 </div>
                                 <div class="col-1"></div>
                             </div>
