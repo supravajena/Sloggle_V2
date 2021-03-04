@@ -21,18 +21,19 @@
             <div class="container">
                 <div class="navbar-brand">
                     <div>
+
                         <a href="{% url 'home' %}">
-                            <span class="highlighted-text">Slo</span>ggle
+                           <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style="width:200px">
                         </a>
                     </div>
-                    <div class="title-subtext">
-                        Your Freelance Solution
+                    <div class="title-subtext" >
+                        &nbsp &nbsp &nbsp Your Freelance Solution
                     </div>
                 </div>
                 <div class="d-flex">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><i class="fa fa-envelope icon"></i></a>
+                            <a href="#" class="nav-link"><i class="fa fa-bell icon" style="margin:2px"></i></a>
                         </li>
                         <li class="nav-item">
                             <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-modal" style="margin-right: 1rem; width: 80px;">Login</button>
@@ -56,16 +57,16 @@
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
                     <ul class="dropdown-menu bg-dark">
-                        <li><a class="dropdown-item text-light" href="{% url 'about' %}">About</a></li>
-                        <li><a class="dropdown-item text-light" href="{% url 'contact' %}">Contact</a></li>
+                        <li><a class="dropdown-item text-light" href="{% url 'about' %}">About us</a></li>
+                        <li><a class="dropdown-item text-light" href="{% url 'contact' %}">Contact us</a></li>
                         <li><hr class="dropdown-divider" style="color: #5b6773"></li>
-                        <li><a class="dropdown-item text-light" href="#">Get a Quote</a></li>
+
                     </ul>
                 </div>
 
                 <li class="nav-item"><a href="{% url 'find_jobs' %}" class="nav-link">Find Jobs</a></li>
                 <li class="nav-item"><a href="{% url 'hire_freelancer' %}" class="nav-link">Freelancer</a></li>
-                <li class="nav-item"><a href="{% url 'post_project' %}" class="nav-link">Post A Project</a></li>
+                <li class="nav-item"><a href="{% url 'post_project' %}" class="nav-link">Post a Project</a></li>
             </ul>
         </div>
     </div>
@@ -74,12 +75,12 @@
     {% endblock %}
 
     {# footer with sitemap #}
-    <footer class="pt-5">
-        <div class="container">
+    <footer class="pt-5" style="background-color: black">
+        <div class="container" >
             <div class="row">
                 <div class="col-3">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="{% url 'home' %}">Sloggle</a></li>
+                          <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:5%;margin-right:auto;width:28%">
                         <li class="list-group-item"><a href="{% url 'hire_freelancer' %}">Freelancers</a></li>
                         <li class="list-group-item"><a href="{% url 'post_project' %}">Projects</a></li>
                         <li class="list-group-item"><a href="{% url 'find_jobs' %}">Find Jobs</a></li>
@@ -96,7 +97,7 @@
                 <div class="col-3"></div>
                 <div class="col-3">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="{% url 'home' %}">Sloggle</a></li>
+                        <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:5%;margin-right:auto;width:28%">
                         <li class="list-group-item">Help and Support</li>
                         <li class="list-group-item">US (English)</li>
                     </ul>
@@ -113,18 +114,18 @@
         </div>
         {# copyright bar #}
         <div class="text-center mt-4 pt-4 pb-3" style="background-color: #495057">
-            <p>Copyright &copy; 2021 Solggle Consultancy PVT. LTD.</p>
+            <p>Copyright &copy; 2021 SLOGGLE CONSULTANCY PVT. LTD.</p>
         </div>
     </footer>
 
     {# chat #}
     <button class="open-button" onclick="openForm()">Let's Chat</button>
 
-    <div class="chat-popup" id="myForm">
+    <div class="chat-popup" id="myForm" style="background-color: black">
       <form action="/action_page.php" class="form-container">
-        <h1>Chat</h1>
+        <h1 style="color:black">Chat</h1>
 
-        <label for="msg"><b>Message</b></label>
+        <label for="msg"><b style="color:black">Message</b></label>
         <textarea placeholder="Type message.." name="msg" required></textarea>
 
         <button type="submit" class="btn">Send</button>
@@ -133,15 +134,17 @@
     </div>
 
     {# signin/login modals #}
-    <div class="modal fade bg-dark" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade bg-dark" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="background-color: black!important">
       <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: black">
                 <div class="modal-header">
-                    <h5 class="modal-title">Log In</h5>
+                    <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:auto;margin-right:17%;width:50%">
+
+
                 </div>
                 <div class="modal-body">
-                    <div class="d-flex justify-content-center" style="font-size: 5rem">
-                        <i class="fa fa-user-circle"></i>
+                    <div class="d-flex justify-content-center" style="font-size: 5rem;margin-left: 10%">
+                        <h5 class="modal-title" style="margin-left: 28%">Log In</h5>
                     </div>
                     <div class="row mt-4 mb-3">
                         <div class="col-1"></div>
@@ -164,49 +167,34 @@
                         <div class="col-1"></div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button class="btn btn-success" style="width: 150px">
+                         &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 150px;margin-left:2.5px">
                             Log In
                         </button>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col">
-                        <hr>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
 
-                <div class="d-flex justify-content-center mt-3 mb-5">
-                    <button class="btn btn-primary">
-                        <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
-                        Log In with Facebook
-                    </button>
-                </div>
+
+
             </div>
         </div>
     </div>
 
-    <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
+    <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="background-color:
+black!important;">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="background-color: black">
+            <div class="modal-content" style="background-color: black">
 
                 <div class="modal-body">
 
-                    <div class="container" id="makeYourChoice" style="text-align:center;">
-                        <h2>Make Your Choice</h2>
-                    </div>
-                    <div class="container d-flex justify-content-center">
 
-                        <button style="width:auto; margin-right: 1rem;" id="hireFreelancerButton">Hire a freelancer</button>
-                        <button style="width:auto;" id="beFreelancerButton">Be a freelancer</button>
-                    </div>
 
                     <div class="container d-none" id="signupForm">
 
-                        <h1 style="color:white;text-align:center">Join with Sloggle</h1>
-                        <p style="color:white;margin-top:10px; text-align: center;">Please fill in this form to create an account.</p>
+                        <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:37%;margin-right:auto;width:30%">
+
+
+                        <p style="color:white;margin-top:10px; text-align: center;"><b> Create New Account</b></p>
                         <hr>
 
                         <form action="">
@@ -216,7 +204,7 @@
                             <label for="psw"><b style="color:white">Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
 
-                            <label for="psw-repeat"><b style="color:white">Repeat Password</b></label>
+                            <label for="psw-repeat"><b style="color:white">Re-enter Password</b></label>
                             <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
                             <label>
@@ -242,14 +230,28 @@
                             <div class="d-flex justify-content-center mt-3 mb-5">
                                 <button class="btn btn-primary">
                                     <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
-                                    Sign Up with Facebook
+                                    <a href ="http://www.facebook.com" style="color:white">Sign Up with Facebook</a>
+
                                 </button>
                             </div>
 
                         </form>
                     </div>
+                    <div class="container" id="makeYourChoice" style="text-align:center;">
+                        <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:6%;margin-right:auto;width:30%;margin-bottom: 10px"><br/>
+                        <h2><b>Select account type</b></h2>
+                        <p>Don't worry , this can be changed later </p>
+                    </div>
+                    <div class="container d-flex justify-content-center">
+
+                        <button style="width:auto; margin-right: 1rem;" id="hireFreelancerButton">Hire a freelancer</button>
+                        <button style="width:auto;" id="beFreelancerButton">Be a freelancer</button>
+                    </div>
+
+
 
                 </div>
+
             </div>
         </div>
     </div>

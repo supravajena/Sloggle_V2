@@ -123,9 +123,15 @@ hr {
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
   <form class="modal-content" action="/action_page.php">
+      <div class="modal-header">
+          <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:auto;margin-right:auto;width:50%">
+      </div>
+
     <div class="container">
-      <h1 style="color:white;text-align:center">Join with Sloggle</h1>
-      <p style="color:white;margin-top:10px">Please fill in this form to create an account.</p>
+
+
+
+
       <hr>
       <label for="email"><b style="color:white">Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>

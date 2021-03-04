@@ -8,6 +8,7 @@ venv/
 db.sqlite3
 
 # python caches
+__pycache__
 Sloggle/__pycache__
 SloggleUI/__pycache__
 
