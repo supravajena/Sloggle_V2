@@ -27,7 +27,8 @@
                         </a>
                     </div>
                     <div class="title-subtext" >
-                        &nbsp &nbsp &nbsp Your Freelance Solution
+                        <!-- TODO: remove nbsp from here -->
+                        &nbsp; &nbsp; &nbsp; Your Freelance Solution
                     </div>
                 </div>
                 <div class="d-flex">
@@ -133,7 +134,9 @@
       </form>
     </div>
 
-    {# signin/login modals #}
+    {# modals #}
+
+    {# log in modal #}
     <div class="modal fade bg-dark" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="background-color: black!important">
       <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content" style="background-color: black">
@@ -180,6 +183,7 @@
         </div>
     </div>
 
+    {# sign up modal#}
     <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="background-color:
 black!important;">
         <div class="modal-dialog modal-dialog-centered modal-lg" style="background-color: black">
@@ -197,15 +201,55 @@ black!important;">
                         <p style="color:white;margin-top:10px; text-align: center;"><b> Create New Account</b></p>
                         <hr>
 
-                        <form action="">
+                        <form action="" method="POST">{% csrf_token %}
+
+                            <!-- <div class="form-group">  
+                                <label for="first_name">First Name:</label>  
+                                <input type="text" class="form-control" id="first_name" placeholder="Enter first name"  
+              name="first_name">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="last_name">Last Name:</label>  
+                                <input type="text" class="form-control" id="last_name" placeholder="Enter last name"  
+              name="last_name">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="username">Username:</label>  
+                                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="email">Email:</label>  
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="pwd1">Password:</label>  
+                                <input type="password" class="form-control" id="pwd1" placeholder="Enter password" name="password1">  
+                            </div>  
+                            <div class="form-group">  
+                                <label for="pwd2">Confirm Password:</label>  
+                                <input type="password" class="form-control" id="pwd2" placeholder="Reenter password"  
+              name="password2">  
+                            </div>  
+                            <button type="submit" class="btn btn-primary">Submit</button> -->
+
+                            
+                            <label for="first_name">First Name:</label>  
+                            <input type="text" id="first_name" placeholder="Enter first name" name="first_name">  
+                            
+                            <label for="last_name">Last Name:</label>  
+                            <input type="text" id="last_name" placeholder="Enter last name" name="last_name">
+
+                            <label for="username"><b style="color:white">Username</b></label>
+                            <input type="text" placeholder="Pick a username" name="username" required>
+
                             <label for="email"><b style="color:white">Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
+                            <input type="email" placeholder="Enter Email" name="email" required>
 
-                            <label for="psw"><b style="color:white">Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <label for="pwd1"><b style="color:white">Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password1" required>
 
-                            <label for="psw-repeat"><b style="color:white">Re-enter Password</b></label>
-                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                            <label for="pwd2"><b style="color:white">Re-enter Password</b></label>
+                            <input type="password" placeholder="Repeat Password" id="pwd2" name="password2" required>
 
                             <label>
                             <input type="checkbox" checked="checked" name="remember" style="color:white;margin-bottom:15px"> Remember me
@@ -213,7 +257,7 @@ black!important;">
 
                             <p style="color:white">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-{#                            <div class="clearfix"></div>#}
+                            {#                            <div class="clearfix"></div>#}
 
                             <button type="button" class="cancelbtn" id="signupCancelButton">Cancel</button>
                             <button type="submit" class="signupbtn">Sign Up</button>

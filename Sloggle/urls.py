@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from SloggleUI.views import home, find_jobs, hire_freelancer, post_project, about, contact, post_project_details
+from SloggleUI.views import home, find_jobs, hire_freelancer, post_project, about, contact, post_project_details, activate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('post_project', post_project, name="post_project"),
     path('about', about, name='about'),
     path('contact', contact, name='contact'),
-    path('post_project_details', post_project_details, name="post_project_details")
+    path('post_project_details', post_project_details, name="post_project_details"),
+    path('activate/<uidb64>/<token>/', activate, name='activate'),
 ]
