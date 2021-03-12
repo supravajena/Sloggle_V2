@@ -34,3 +34,14 @@ signupCancelButton.addEventListener("click", function() {
   beFreelancerButton.classList.remove("d-none");
   makeYourChoice.classList.remove("d-none");
 });
+
+const hourlyPrice = document.getElementById("hourlyPrice");
+const fixedPrice = document.getElementById("fixedPrice");
+
+function setHourlyValue(value) {
+  hourlyPrice.setAttribute("value", `${value}`);
+}
+
+function setFixedPrice(value) {
+  fixedPrice.setAttribute("value", `${value}`);
+}

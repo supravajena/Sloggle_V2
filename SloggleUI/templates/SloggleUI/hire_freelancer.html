@@ -10,15 +10,6 @@
                 Hire a Freelancer
             </div>
 
-            {# skill search #}
-            <div class="row g-3 mb-3">
-                <div class="col-11">
-                    <input type="text" class="form-control" id="required-skills" placeholder="Required Skills">
-                </div>
-                <div class="col-1">
-                    <button class="btn btn-primary">Search</button>
-                </div>
-            </div>
 
             {# result area #}
             <div class="row g-3 mb-3">
@@ -38,19 +29,19 @@
                                         <ul class="list-group">
                                           <li class="list-group-item bg-transparent">
                                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                            1 Hour
+                                            Freshers
                                           </li>
                                           <li class="list-group-item bg-transparent">
                                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                            2 Hours
+                                            0 - 1 years
                                           </li>
                                           <li class="list-group-item bg-transparent">
                                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                            3 Hours
+                                            1-2 years
                                           </li>
                                           <li class="list-group-item bg-transparent">
                                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                            4 Hours
+                                            2-3 years
                                           </li>
                                           <li class="list-group-item bg-transparent">
                                             <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
@@ -128,9 +119,29 @@
                             </div>
                             <div class="container">
                                 <label for="customRange1" class="form-label">Fixed Price</label>
-                                <input type="range" class="form-range" id="customRange1">
+                                <input id="fixedPrice" type="range" class="form-range" id="customRange1">
+                            </div>
+                            <div class="container mb-3" style="font-size: 0.75rem; color: #999999;">
+                                <div class="d-flex justify-content-between">
+                                    <span onclick="setFixedPrice(0);">$0</span>
+                                    <span style="position: relative; left: 4px;" onclick="setFixedPrice(25);">$25</span>
+                                    <span style="position: relative; left: 4px;" onclick="setFixedPrice(50);">$50</span>
+                                    <span style="position: relative; left: 4px;" onclick="setFixedPrice(75);">$75</span>
+                                    <span style="position: relative; left: 4px;" onclick="setFixedPrice(100);">$100</span>
+                                </div>
+                            </div>
+                            <div class="container">
                                 <label for="customRange1" class="form-label">Hourly Price</label>
-                                <input type="range" class="form-range" id="customRange1">
+                                <input id="hourlyPrice" type="range" class="form-range" min="0" max="100" step="25" id="customRange1">
+                            </div>
+                            <div class="container" style="font-size: 0.75rem; color: #999999;">
+                                <div class="d-flex justify-content-between">
+                                    <span onclick="setHourlyValue(0);">$0</span>
+                                    <span style="position: relative; left: 4px;" onclick="setHourlyValue(25);">$25</span>
+                                    <span style="position: relative; left: 4px;" onclick="setHourlyValue(50);">$50</span>
+                                    <span style="position: relative; left: 4px;" onclick="setHourlyValue(75);">$75</span>
+                                    <span style="position: relative; left: 4px;" onclick="setHourlyValue(100);">$100</span>
+                                </div>
                             </div>
                         </div>
                 </div>
