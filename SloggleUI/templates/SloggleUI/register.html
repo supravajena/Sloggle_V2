@@ -9,6 +9,7 @@
     <title>Register | Sloggle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'SloggleUI/main.css' %}">
+    <script src="{% static 'SloggleUI/main.js' %}" defer></script>
 </head>
 <body style="background-color: #000000;">
 
@@ -527,11 +528,21 @@
         const entryLevelRadioButton = document.getElementById("inlineradio1");
 
         entryLevelRadioButton.addEventListener("click", function() {
-            document.getElementById("inlineradio2").disabled = true;
-            document.getElementById("inlineradio3").disabled = true;
-            document.getElementById("inputAddress").disabled = true;
-            document.getElementById("exampleDataList2").disabled = true;
-            document.getElementById("gridCheck").disabled = true;
+
+            if(document.getElementById("inlineradio2").disabled === false) {
+                document.getElementById("inlineradio2").disabled = true;
+                document.getElementById("inlineradio3").disabled = true;
+                document.getElementById("inputAddress").disabled = true;
+                document.getElementById("exampleDataList2").disabled = true;
+                document.getElementById("gridCheck").disabled = true;
+            } else {
+                document.getElementById("inlineradio2").disabled = false;
+                document.getElementById("inlineradio3").disabled = false;
+                document.getElementById("inputAddress").disabled = false;
+                document.getElementById("exampleDataList2").disabled = false;
+                document.getElementById("gridCheck").disabled = false;    
+            }
+
         });
     </script>
     
