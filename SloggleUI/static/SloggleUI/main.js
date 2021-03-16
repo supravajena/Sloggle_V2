@@ -58,7 +58,8 @@ hireFreelancerButton.addEventListener("click", function() {
 });
 
 beFreelancerButton.addEventListener("click", function(){
-    makeYourChoice.classList.add("d-none");
-    registrationForm.classList.remove("d-none");
+    // makeYourChoice.classList.add("d-none");
+    // registrationForm.classList.remove("d-none");
+    window.location = "/register";
 });
 

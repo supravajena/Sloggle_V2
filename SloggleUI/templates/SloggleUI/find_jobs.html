@@ -103,12 +103,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="container">
+                            <!-- <div class="container">
                                 <label for="customRange1" class="form-label">Fixed Price</label>
                                 <input type="range" class="form-range" id="customRange1">
                                 <label for="customRange1" class="form-label">Hourly Price</label>
                                 <input type="range" class="form-range" id="customRange1">
-                            </div>
+                            </div> -->
+                            <div class="container mb-3">
+                                <label for="hourlyPriceField" class="form-label">Fixed Price</label>
+                                <div class="input-group" style="padding: 0;">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" id="fixedPriceField" aria-label="Amount (to the nearest dollar)" style="margin: 0; padding: 0;">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                              </div>
+                              <div class="container">
+                                <label for="hourlyPriceField" class="form-label">Hourly Price</label>
+                                <div class="input-group" style="padding: 0;">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" id="hourlyPriceField" aria-label="Amount (to the nearest dollar)" style="margin: 0; padding: 0;">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                              </div>
                         </div>
                 </div>
             </div>
