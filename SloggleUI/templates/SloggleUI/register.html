@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
 {% load static %}
 
-{% block title%}Registration{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Sloggle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'SloggleUI/main.css' %}">
+</head>
+<body style="background-color: #000000;">
 
     <!-- Registration form -->
     <div id="registrationForm" class="container text-light my-5">
+
+        <div style="display: flex; justify-content: center;">
+            <img src="{% static 'SloggleUI/logo.jpg' %}" alt="Sloggle" width="250px">
+        </div>
         
         <p class="text-center display-6 mb-5">Let Us Know About What You Do</p>
 
@@ -523,5 +534,6 @@
             document.getElementById("gridCheck").disabled = true;
         });
     </script>
-
-{% endblock %}
+    
+</body>
+</html>
