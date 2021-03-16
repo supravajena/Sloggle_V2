@@ -1,18 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <title>{% block title %}{% endblock %} | Sloggle</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'SloggleUI/main.css' %}">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"
+        defer></script>
     <script src="{% static 'SloggleUI/main.js' %}" defer></script>
 </head>
+
 <body class="bg-dark text-light">
 
     {# header with login and signup button #}
@@ -23,10 +28,10 @@
                     <div>
 
                         <a href="{% url 'home' %}">
-                           <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style="width:200px">
+                            <img class="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style="width:200px">
                         </a>
                     </div>
-                    <div class="title-subtext" >
+                    <div class="title-subtext">
                         <!-- TODO: remove nbsp from here -->
                         &nbsp; &nbsp; &nbsp; Your Freelance Solution
                     </div>
@@ -37,10 +42,12 @@
                             <a href="#" class="nav-link"><i class="fa fa-bell icon" style="margin:2px"></i></a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-modal" style="margin-right: 1rem; width: 80px;">Login</button>
+                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-modal"
+                                style="margin-right: 1rem; width: 80px;">Login</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#signup-modal" style="width: 80px;">Signup</button>
+                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#signup-modal"
+                                style="width: 80px;">Signup</button>
                         </li>
                     </ul>
                 </div>
@@ -54,13 +61,16 @@
             <ul class="nav">
                 <div class="btn-group" style="margin-right: 1.5rem;">
                     <button type="button" class="btn btn-dark"><a href="{% url 'home' %}">Home</a></button>
-                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
                     <ul class="dropdown-menu bg-dark">
                         <li><a class="dropdown-item text-light" href="{% url 'about' %}">About us</a></li>
                         <li><a class="dropdown-item text-light" href="{% url 'contact' %}">Contact us</a></li>
-                        <li><hr class="dropdown-divider" style="color: #5b6773"></li>
+                        <li>
+                            <hr class="dropdown-divider" style="color: #5b6773">
+                        </li>
 
                     </ul>
                 </div>
@@ -77,11 +87,12 @@
 
     {# footer with sitemap #}
     <footer class="pt-5" style="background-color: black">
-        <div class="container" >
+        <div class="container">
             <div class="row">
                 <div class="col-3">
                     <ul class="list-group list-group-flush">
-                          <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:5%;margin-right:auto;width:28%">
+                        <img class="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo"
+                            style=" margin-left:5%;margin-right:auto;width:28%">
                         <li class="list-group-item"><a href="{% url 'hire_freelancer' %}">Freelancers</a></li>
                         <li class="list-group-item"><a href="{% url 'post_project' %}">Projects</a></li>
                         <li class="list-group-item"><a href="{% url 'find_jobs' %}">Find Jobs</a></li>
@@ -98,7 +109,8 @@
                 <div class="col-3"></div>
                 <div class="col-3">
                     <ul class="list-group list-group-flush">
-                        <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:5%;margin-right:auto;width:28%">
+                        <img class="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo"
+                            style=" margin-left:5%;margin-right:auto;width:28%">
                         <li class="list-group-item">Help and Support</li>
                         <li class="list-group-item">US (English)</li>
                     </ul>
@@ -123,25 +135,27 @@
     <button class="open-button" onclick="openForm()">Let's Chat</button>
 
     <div class="chat-popup" id="myForm" style="background-color: black">
-      <form action="/action_page.php" class="form-container">
-        <h1 style="color:black">Chat</h1>
+        <form action="/action_page.php" class="form-container">
+            <h1 style="color:black">Chat</h1>
 
-        <label for="msg"><b style="color:black">Message</b></label>
-        <textarea placeholder="Type message.." name="msg" required></textarea>
+            <label for="msg"><b style="color:black">Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
 
-        <button type="submit" class="btn">Send</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-      </form>
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
     </div>
 
     {# modals #}
 
     {# log in modal #}
-    <div class="modal fade bg-dark" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="background-color: black!important">
-      <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal fade bg-dark" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="background-color: black!important">
+        <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content" style="background-color: black">
                 <div class="modal-header">
-                    <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:auto;margin-right:17%;width:50%">
+                    <img class="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo"
+                        style=" margin-left:auto;margin-right:17%;width:50%">
 
 
                 </div>
@@ -170,7 +184,7 @@
                         <div class="col-1"></div>
                     </div>
                     <div class="d-flex justify-content-center">
-                         &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 150px;margin-left:2.5px">
+                        &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 150px;margin-left:2.5px">
                             Log In
                         </button>
                     </div>
@@ -184,18 +198,18 @@
     </div>
 
     {# sign up modal#}
-    <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="background-color:
+    <div class="modal fade bg-dark" id="signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="background-color:
 black!important;">
         <div class="modal-dialog modal-dialog-centered modal-lg" style="background-color: black">
             <div class="modal-content" style="background-color: black">
 
                 <div class="modal-body">
 
+                    <div class="container" id="signupForm">
 
-
-                    <div class="container d-none" id="signupForm">
-
-                        <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:37%;margin-right:auto;width:30%">
+                        <img class="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo"
+                            style=" margin-left:37%;margin-right:auto;width:30%">
 
 
                         <p style="color:white;margin-top:10px; text-align: center;"><b> Create New Account</b></p>
@@ -203,40 +217,10 @@ black!important;">
 
                         <form action="" method="POST">{% csrf_token %}
 
-                            <!-- <div class="form-group">  
-                                <label for="first_name">First Name:</label>  
-                                <input type="text" class="form-control" id="first_name" placeholder="Enter first name"  
-              name="first_name">  
-                            </div>  
-                            <div class="form-group">  
-                                <label for="last_name">Last Name:</label>  
-                                <input type="text" class="form-control" id="last_name" placeholder="Enter last name"  
-              name="last_name">  
-                            </div>  
-                            <div class="form-group">  
-                                <label for="username">Username:</label>  
-                                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">  
-                            </div>  
-                            <div class="form-group">  
-                                <label for="email">Email:</label>  
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">  
-                            </div>  
-                            <div class="form-group">  
-                                <label for="pwd1">Password:</label>  
-                                <input type="password" class="form-control" id="pwd1" placeholder="Enter password" name="password1">  
-                            </div>  
-                            <div class="form-group">  
-                                <label for="pwd2">Confirm Password:</label>  
-                                <input type="password" class="form-control" id="pwd2" placeholder="Reenter password"  
-              name="password2">  
-                            </div>  
-                            <button type="submit" class="btn btn-primary">Submit</button> -->
+                            <label for="first_name">First Name:</label>
+                            <input type="text" id="first_name" placeholder="Enter first name" name="first_name">
 
-                            
-                            <label for="first_name">First Name:</label>  
-                            <input type="text" id="first_name" placeholder="Enter first name" name="first_name">  
-                            
-                            <label for="last_name">Last Name:</label>  
+                            <label for="last_name">Last Name:</label>
                             <input type="text" id="last_name" placeholder="Enter last name" name="last_name">
 
                             <label for="username"><b style="color:white">Username</b></label>
@@ -252,12 +236,14 @@ black!important;">
                             <input type="password" placeholder="Repeat Password" id="pwd2" name="password2" required>
 
                             <label>
-                            <input type="checkbox" checked="checked" name="remember" style="color:white;margin-bottom:15px"> Remember me
+                                <input type="checkbox" checked="checked" name="remember"
+                                    style="color:white;margin-bottom:15px"> Remember me
                             </label>
 
-                            <p style="color:white">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                            <p style="color:white">By creating an account you agree to our <a href="#"
+                                    style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-                            {#                            <div class="clearfix"></div>#}
+                            {# <div class="clearfix"></div>#}
 
                             <button type="button" class="cancelbtn" id="signupCancelButton">Cancel</button>
                             <button type="submit" class="signupbtn">Sign Up</button>
@@ -266,7 +252,8 @@ black!important;">
                                 <div class="col-1"></div>
                                 <div class="col" style="padding-top: 1rem">
                                     <hr>
-                                    <span style="position: relative; bottom: 2.3rem; left: 18.5rem; padding: 0.3rem; border: 3px solid #fff; border-radius: 50%; background-color: #212529">OR</span>
+                                    <span
+                                        style="position: relative; bottom: 2.3rem; left: 18.5rem; padding: 0.3rem; border: 3px solid #fff; border-radius: 50%; background-color: #212529">OR</span>
                                 </div>
                                 <div class="col-1"></div>
                             </div>
@@ -274,25 +261,13 @@ black!important;">
                             <div class="d-flex justify-content-center mt-3 mb-5">
                                 <button class="btn btn-primary">
                                     <i class="fa fa-facebook-square" style="margin-right: 0.5rem;"></i>
-                                    <a href ="http://www.facebook.com" style="color:white">Sign Up with Facebook</a>
+                                    <a href="http://www.facebook.com" style="color:white">Sign Up with Facebook</a>
 
                                 </button>
                             </div>
 
                         </form>
                     </div>
-                    <div class="container" id="makeYourChoice" style="text-align:center;">
-                        <img class ="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo" style=" margin-left:6%;margin-right:auto;width:30%;margin-bottom: 10px"><br/>
-                        <h2><b>Select account type</b></h2>
-                        <p>Don't worry , this can be changed later </p>
-                    </div>
-                    <div class="container d-flex justify-content-center">
-
-                        <button style="width:auto; margin-right: 1rem;" id="hireFreelancerButton">Hire a freelancer</button>
-                        <button style="width:auto;" id="beFreelancerButton">Be a freelancer</button>
-                    </div>
-
-
 
                 </div>
 
@@ -301,4 +276,5 @@ black!important;">
     </div>
 
 </body>
+
 </html>

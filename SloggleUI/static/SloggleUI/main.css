@@ -181,7 +181,7 @@ footer .list-group-item:first-child {
 }
 
 /* Set a style for the submit/send button */
-.form-container .btn {
+.form-container .btn, #hireFreelancerButton, #beFreelancerButton {
   background-color: #4CAF50;
   color: white;
   padding: 16px 20px;
@@ -303,4 +303,18 @@ hr {
 
 .accordion-button:not(.collapsed) {
     background-color: #000000;
+}
+
+.registrationFormWrapper {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 1rem;
+}
+
+.registrationFormWrapper label {
+    padding: 0;
+}
+
+#inputCity, #inputZip {
+    padding: .375rem .75rem;
 }

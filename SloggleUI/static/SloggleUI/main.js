@@ -14,26 +14,26 @@ const beFreelancerButton = document.getElementById("beFreelancerButton");
 const signupCancelButton = document.getElementById("signupCancelButton");
 const makeYourChoice = document.getElementById("makeYourChoice");
 
-hireFreelancerButton.addEventListener("click", function () {
-  signupForm.classList.remove("d-none");
-  hireFreelancerButton.classList.add("d-none");
-  beFreelancerButton.classList.add("d-none");
-  makeYourChoice.classList.add("d-none");
-});
+// hireFreelancerButton.addEventListener("click", function () {
+//   signupForm.classList.remove("d-none");
+//   hireFreelancerButton.classList.add("d-none");
+//   beFreelancerButton.classList.add("d-none");
+//   makeYourChoice.classList.add("d-none");
+// });
 
-beFreelancerButton.addEventListener("click", function () {
-  signupForm.classList.remove("d-none");
-  hireFreelancerButton.classList.add("d-none");
-  beFreelancerButton.classList.add("d-none");
-  makeYourChoice.classList.add("d-none");
-});
+// beFreelancerButton.addEventListener("click", function () {
+//   signupForm.classList.remove("d-none");
+//   hireFreelancerButton.classList.add("d-none");
+//   beFreelancerButton.classList.add("d-none");
+//   makeYourChoice.classList.add("d-none");
+// });
 
-signupCancelButton.addEventListener("click", function() {
-  signupForm.classList.add("d-none");
-  hireFreelancerButton.classList.remove("d-none");
-  beFreelancerButton.classList.remove("d-none");
-  makeYourChoice.classList.remove("d-none");
-});
+// signupCancelButton.addEventListener("click", function() {
+//   signupForm.classList.add("d-none");
+//   hireFreelancerButton.classList.remove("d-none");
+//   beFreelancerButton.classList.remove("d-none");
+//   makeYourChoice.classList.remove("d-none");
+// });
 
 const hourlyPrice = document.getElementById("hourlyPrice");
 const fixedPrice = document.getElementById("fixedPrice");
@@ -45,3 +45,20 @@ function setHourlyValue(value) {
 function setFixedPrice(value) {
   fixedPrice.setAttribute("value", `${value}`);
 }
+
+// const makeYourChoice = document.getElementById("makeYourChoice");
+// const hireFreelancerButton = document.getElementById("hireFreelancerButton");
+// const beFreelancerButton = document.getElementById("beFreelancerButton");
+const registrationForm = document.getElementById("registrationForm");
+
+hireFreelancerButton.addEventListener("click", function() {
+    // makeYourChoice.classList.add("d-none");
+    // registrationForm.classList.remove("d-none");
+    window.location = "/register";
+});
+
+beFreelancerButton.addEventListener("click", function(){
+    makeYourChoice.classList.add("d-none");
+    registrationForm.classList.remove("d-none");
+});
+

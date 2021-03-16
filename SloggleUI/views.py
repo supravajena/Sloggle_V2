@@ -59,12 +59,11 @@ def home(request):
                 mail_subject, message, to=[to_email]
             )
             email.send()
-            return render(request, 'SloggleUI/mail_confirmation_notice.html')
+            return render(request, 'SloggleUI/makeYourChoice.html')
     else:
         form = SignUpForm()
         return render(request, 'SloggleUI/home.html', {'form': form})
     
-
 
 def find_jobs(request):
     return render(request, 'SloggleUI/find_jobs.html')
@@ -89,3 +88,7 @@ def contact(request):
 
 def post_project_details(request):
     return render(request, 'SloggleUI/post_project_details.html')
+
+
+def register(request):
+    return render(request, 'SloggleUI/register.html')
