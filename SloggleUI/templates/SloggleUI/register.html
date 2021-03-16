@@ -67,15 +67,15 @@
             <div style="padding: 0;">
                 <span style="display: inline-block; margin-right: 5vw;">Expertise Level</span>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineradio1" value="option1">
+                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio1" value="option1">
                     <label class="form-check-label" for="inlineradio1">Entry Level</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineradio2" value="option2">
+                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio2" value="option2">
                     <label class="form-check-label" for="inlineradio2">Intermediate Level</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineradio3" value="option3" disabled>
+                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio3" value="option3">
                     <label class="form-check-label" for="inlineradio3">Expert Level</label>
                 </div>
             </div>
@@ -108,8 +108,8 @@
         </div>
 
         <div class="row registrationFormWrapper">
-            <label for="exampleDataList" class="form-label"> Designation</label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList"
+            <label for="exampleDataList2" class="form-label"> Designation</label>
+            <input class="form-control" list="datalistOptions" id="exampleDataList2"
                 placeholder="Type to search...">
             <datalist id="datalistOptions">
                 <option value="java">
@@ -137,8 +137,8 @@
         
         <div class="row registrationFormWrapper">
             <p style="padding: 0;">Educational(optional)please enter manually</p>
-            <label for="inputAddress" class="form-label"><b>University</b></label>
-            <input type="text" class="form-control" id="inputAddress"
+            <label for="inputAddress2" class="form-label"><b>University</b></label>
+            <input type="text" class="form-control" id="inputAddress2"
                 placeholder="Type to search.." style="padding: .375rem .75rem;">
         </div>
         <div class="row registrationFormWrapper">
@@ -236,7 +236,7 @@
         </div>
 
         <div class="row registrationFormWrapper">
-            <label for="inputAddress" class="form-label"><b>Language</b></label>
+            <label for="inputLanguage" class="form-label"><b>Language</b></label>
             <input type="text" class="form-control" id="inputLanguage" placeholder="English" style="padding: .375rem .75rem;">
         </div>
 
@@ -244,16 +244,16 @@
             <div style="padding: 0;">
                 <span style="display: inline-block; margin-right: 5vw;">Proficiency</span>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineradio1" value="option1">
-                    <label class="form-check-label" for="inlineradio1">Basic</label>
+                    <input class="form-check-input" type="radio" id="inlineradio4" value="option1">
+                    <label class="form-check-label" for="inlineradio4">Basic</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineradio2" value="option2">
-                    <label class="form-check-label" for="inlineradio2">Intermediate</label>
+                    <input class="form-check-input" type="radio" id="inlineradio5" value="option2">
+                    <label class="form-check-label" for="inlineradio5">Intermediate</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="inlineradio3" value="option3" disabled>
-                    <label class="form-check-label" for="inlineradio3">Fluent</label>
+                    <input class="form-check-input" type="radio" id="inlineradio6" value="option3" disabled>
+                    <label class="form-check-label" for="inlineradio6">Fluent</label>
                 </div>
             </div>
         </div>
@@ -501,5 +501,19 @@
     
     </form>
     </div>
+
+    <!-- TODO: Move this to main JS file -->
+    <script>
+        // for disabling stuff on radio button click in expertise level
+        const entryLevelRadioButton = document.getElementById("inlineradio1");
+
+        entryLevelRadioButton.addEventListener("click", function() {
+            document.getElementById("inlineradio2").disabled = true;
+            document.getElementById("inlineradio3").disabled = true;
+            document.getElementById("inputAddress").disabled = true;
+            document.getElementById("exampleDataList2").disabled = true;
+            document.getElementById("gridCheck").disabled = true;
+        });
+    </script>
 
 {% endblock %}
