@@ -152,6 +152,23 @@
             </div>
 
                 {# user result card #}
+                {% for userInfo in userInfos %}
+                <div class="col-3">
+                  <div class="card card-light" style="height: 60vh; overflow-y: auto;">
+                      <div class="card-img-top">
+                          <div style="margin: 1.5rem auto; height: 150px; width: 150px; border-radius: 50%; background-color: #5b6773;"></div>
+                      </div>
+                      <div class="card-body">
+                          <div class="card-title text-center text-decoration pb-2" style="font-weight: 700; border-bottom: 1px solid #f4f4f4;">Jane Doe</div>
+                          <div class="card-text text-center">
+                            {{ userInfo.title }} <br>
+                            {{ userInfo.category }} <br>
+                            {{ userInfo.skill }}
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+                <!-- </div>
                 <div class="col-3">
                     <div class="card card-light" style="height: 60vh; overflow-y: auto;">
                         <div class="card-img-top">
@@ -173,18 +190,7 @@
                             <div class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, doloribus eius error excepturi expedita illo</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-3">
-                    <div class="card card-light" style="height: 60vh; overflow-y: auto;">
-                        <div class="card-img-top">
-                            <div style="margin: 1.5rem auto; height: 150px; width: 150px; border-radius: 50%; background-color: #5b6773;"></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="card-title text-center text-decoration pb-2" style="font-weight: 700; border-bottom: 1px solid #f4f4f4;">Jane Doe</div>
-                            <div class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, doloribus eius error excepturi expedita illo</div>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
 
 
 

@@ -13,6 +13,8 @@
 </head>
 <body style="background-color: #000000;">
 
+    <form method="POST">
+    {% csrf_token %}
     <!-- Registration form -->
     <div id="registrationForm" class="container text-light my-5">
 
@@ -25,7 +27,7 @@
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label">Title</label>
             <input class="form-control" list="datalistOptions" id="exampleDataList"
-                placeholder="Type to search...">
+                name="title" placeholder="Type to search...">
             <datalist id="datalistOptions">
                 <option value="Software Developer">
                 <option value="Software Tester">
@@ -38,7 +40,7 @@
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label">Category</label>
             <input class="form-control" list="datalistCategory" id="exampleCategory"
-                placeholder="Type to search...">
+                name="category" placeholder="Type to search...">
             <datalist id="datalistCategory">
                 <option value="Computer Software">
                 <option value="Mobile Application Development">
@@ -49,7 +51,7 @@
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label"> Skills</label>
             <input class="form-control" list="datalistSkills" id="exampleSkills"
-                placeholder="Type to search...">
+                name="skills" placeholder="Type to search...">
             <datalist id="datalistSkills">
                 <option value="java">
                 <option value="Python">
@@ -79,15 +81,15 @@
             <div style="padding: 0;">
                 <span style="display: inline-block; margin-right: 5vw;">Expertise Level</span>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio1" value="option1">
-                    <label class="form-check-label" for="inlineradio1">Entry Level</label>
+                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio1" value="Entry Level">
+                    <label class="form-check-label" for="inlineradio1" value="">Entry Level</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio2" value="option2">
+                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio2" value="Intermediate Level">
                     <label class="form-check-label" for="inlineradio2">Intermediate Level</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio3" value="option3">
+                    <input class="form-check-input" type="radio" name="expertiseRadio" id="inlineradio3" value="Expert Level">
                     <label class="form-check-label" for="inlineradio3">Expert Level</label>
                 </div>
             </div>
@@ -98,30 +100,30 @@
         <div class="row registrationFormWrapper">
             <p style="padding: 0;">Experience</p>
             <label for="inputAddress" class="form-label">Company</label>
-            <input type="text" class="form-control" id="inputAddress" style="padding: .375rem .75rem;">
+            <input type="text" class="form-control" name="company" id="inputAddress" style="padding: .375rem .75rem;">
         </div>
 
         <div class="d-flex justify-content-between registrationFormWrapper">
             <div class="col mr-3" style="padding-right: 0; padding-left: 0;">
                 <label for="inputCity" class="form-label">Location</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="city">
+                <input type="text" class="form-control" name="location" id="inputCity" placeholder="city">
             </div>
             <div class="col mx-3" style="padding-right: 0; padding-left: 0;">
                 <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
+                <select id="inputState" class="form-select" name="state">
                     <option selected>Choose...</option>
                     <option>...</option>
                 </select>
             </div>
             <div class="col ml-3" style="padding-right: 0; padding-left: 0;">
                 <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input type="text" class="form-control" id="inputZip" name="zip">
             </div>
         </div>
 
         <div class="row registrationFormWrapper">
             <label for="exampleDataList2" class="form-label"> Designation</label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList2"
+            <input class="form-control" list="datalistOptions" name="designation" id="exampleDataList2"
                 placeholder="Type to search...">
             <datalist id="datalistOptions">
                 <option value="java">
@@ -134,7 +136,7 @@
         </div>
         <div class="row registrationFormWrapper">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="isCurrentWork">
                 &nbsp; <label class="form-check-label" for="gridCheck">
                     I currently work here
                 </label>

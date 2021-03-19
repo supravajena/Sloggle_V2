@@ -10,6 +10,8 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.auth import authenticate, login, logout
 
+from .models import UserInfo
+
 UserModel = get_user_model()
 from .forms import SignUpForm
 
@@ -69,7 +71,8 @@ def find_jobs(request):
 
 
 def hire_freelancer(request):
-    return render(request, 'SloggleUI/hire_freelancer.html')
+    userInfos = UserInfo.objects.all()
+    return render(request, 'SloggleUI/hire_freelancer.html', {"userInfos": userInfos})
 
 
 def post_project(request):
@@ -90,6 +93,19 @@ def post_project_details(request):
 
 
 def register(request):
+    if request.method == "POST":
+        title = request.POST["title"]
+        category = request.POST["category"]
+        skills = request.POST["skills"]
+        expertiseRadio = request.POST["expertiseRadio"]
+        company = request.POST["company"]
+        location = request.POST["location"]
+        state = request.POST["state"]
+        zip = request.POST["zip"]
+        designation = request.POST["designation"]
+
+        userInfo = UserInfo(title=title, category=category, skills=skills, expertiseRadio=expertiseRadio, company=company, location=location, state=state, zip=zip, designation=designation)
+        userInfo.save()
     return render(request, 'SloggleUI/register.html')
 
 
