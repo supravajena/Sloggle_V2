@@ -42,8 +42,13 @@
                             <a href="#" class="nav-link"><i class="fa fa-bell icon" style="margin:2px"></i></a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-modal"
-                                style="margin-right: 1rem; width: 80px;">Login</button>
+                            <!-- <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login-modal"
+                                style="margin-right: 1rem; width: 80px;">Login</button> -->
+                            <a href="{% url 'login' %}">
+                                <button class="btn btn-dark" style="margin-right: 1rem; width: 80px;">
+                                    Login
+                                </button>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#signup-modal"
@@ -158,37 +163,40 @@
                     <img class="mw-100" src="{% static 'SloggleUI/logo.jpg' %}" alt="logo"
                         style=" margin-left:auto;margin-right:17%;width:50%">
 
-
                 </div>
                 <div class="modal-body">
                     <div class="d-flex justify-content-center" style="font-size: 5rem;margin-left: 10%">
                         <h5 class="modal-title" style="margin-left: 28%">Log In</h5>
                     </div>
-                    <div class="row mt-4 mb-3">
-                        <div class="col-1"></div>
-                        <div class="col-3">
-                            <label for="user-email" class="col-form-label">Email</label>
+
+                    <form method="POST">{% csrf_token %}
+                        <input class="d-none" type="text" name="formType" value="loginForm">
+                        <div class="row mt-4 mb-3">
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <label for="user-email" class="col-form-label">Email</label>
+                            </div>
+                            <div class="col-7">
+                                <input type="email" id="user-email" class="form-control">
+                            </div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-7">
-                            <input type="email" id="user-email" class="form-control">
+                        <div class="row mb-4">
+                            <div class="col-1"></div>
+                            <div class="col-3">
+                                <label for="user-password" class="col-form-label">Password</label>
+                            </div>
+                            <div class="col-7">
+                                <input type="password" id="user-password" class="form-control">
+                            </div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-1"></div>
-                        <div class="col-3">
-                            <label for="user-password" class="col-form-label">Password</label>
+                        <div class="d-flex justify-content-center">
+                            &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 150px;margin-left:2.5px">
+                                Log In
+                            </button>
                         </div>
-                        <div class="col-7">
-                            <input type="password" id="user-password" class="form-control">
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 150px;margin-left:2.5px">
-                            Log In
-                        </button>
-                    </div>
+                    </form>
                 </div>
 
 
@@ -217,6 +225,8 @@ black!important;">
                         <hr>
 
                         <form action="" method="POST">{% csrf_token %}
+
+                            <input class="d-none" type="text" name="formType" value="loginForm">
 
                             <label for="first_name">First Name:</label>
                             <input type="text" id="first_name" placeholder="Enter first name" name="first_name">

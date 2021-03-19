@@ -4,10 +4,11 @@ from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.contrib.auth import authenticate, login, logout
 
 UserModel = get_user_model()
 from .forms import SignUpForm
@@ -34,8 +35,6 @@ def activate(request, uidb64, token):
 
 
 def home(request):
-    if request.method == 'GET':
-        return render(request, 'SloggleUI/home.html')
     if request.method == 'POST':
         form = SignUpForm(request.POST)
 
@@ -62,7 +61,7 @@ def home(request):
             return render(request, 'SloggleUI/makeYourChoice.html')
     else:
         form = SignUpForm()
-        return render(request, 'SloggleUI/home.html', {'form': form})
+    return render(request, 'SloggleUI/home.html', {'form': form})
     
 
 def find_jobs(request):
@@ -92,3 +91,32 @@ def post_project_details(request):
 
 def register(request):
     return render(request, 'SloggleUI/register.html')
+
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(username=str(username), password=str(password))
+        if user is None:
+            return HttpResponse("Unauthorized")
+        else:
+            if user.is_active:
+                login(request, user)
+                return redirect("dashboard")
+            else:
+                return HttpResponse("Your username is : " + username)
+    return render(request, 'SloggleUI/login.html')
+
+
+def dashboard(request):
+    if not request.user.is_authenticated:
+        print(request.user)
+        print(request.user.is_authenticated)
+        return HttpResponse("Unauthorized User.")
+    return render(request, "SloggleUI/dashboard.html")
+
+
+def logout_user(request):
+    logout(request)
+    return redirect("home")
