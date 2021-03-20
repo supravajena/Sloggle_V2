@@ -325,3 +325,7 @@ hr {
 .form-control:disabled {
   background-color: #888888;
 }
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: #495057;
+}

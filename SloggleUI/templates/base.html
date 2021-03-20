@@ -64,25 +64,14 @@
     <div class="container-fluid shadow secondary-navigation py-3">
         <div class="container">
             <ul class="nav">
-                <div class="btn-group" style="margin-right: 1.5rem;">
-                    <button type="button" class="btn btn-dark"><a href="{% url 'home' %}">Home</a></button>
-                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="visually-hidden">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu bg-dark">
-                        <li><a class="dropdown-item text-light" href="{% url 'about' %}">About us</a></li>
-                        <li><a class="dropdown-item text-light" href="{% url 'contact' %}">Contact us</a></li>
-                        <li>
-                            <hr class="dropdown-divider" style="color: #5b6773">
-                        </li>
-
-                    </ul>
-                </div>
-
+                <li class="nav-item" data-bs-toggle="dropdown" aria-expanded="false"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                 <li class="nav-item"><a href="{% url 'find_jobs' %}" class="nav-link">Find Jobs</a></li>
                 <li class="nav-item"><a href="{% url 'hire_freelancer' %}" class="nav-link">Freelancer</a></li>
                 <li class="nav-item"><a href="{% url 'post_project' %}" class="nav-link">Post a Project</a></li>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item text-light" href="{% url 'about' %}">About us</a></li>
+                    <li><a class="dropdown-item text-light" href="{% url 'contact' %}">Contact us</a></li>
+                </ul>
             </ul>
         </div>
     </div>
