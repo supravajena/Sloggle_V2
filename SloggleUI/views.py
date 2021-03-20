@@ -9,6 +9,8 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.auth import authenticate, login, logout
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 from .models import UserInfo
 
@@ -60,7 +62,7 @@ def home(request):
                 mail_subject, message, to=[to_email]
             )
             email.send()
-            return render(request, 'SloggleUI/makeYourChoice.html')
+            return render(request, 'SloggleUI/home.html')
     else:
         form = SignUpForm()
     return render(request, 'SloggleUI/home.html', {'form': form})
@@ -94,6 +96,7 @@ def post_project_details(request):
 
 def register(request):
     if request.method == "POST":
+        user = request.user
         title = request.POST["title"]
         category = request.POST["category"]
         skills = request.POST["skills"]
@@ -103,9 +106,20 @@ def register(request):
         state = request.POST["state"]
         zip = request.POST["zip"]
         designation = request.POST["designation"]
+        description = request.POST["description"]
+        university = request.POST["university"]
+        areaOfStudy = request.POST["areaOfStudy"]
+        degree = request.POST["degree"]
+        certification = request.POST["certification"]
+        language = request.POST["language"]
+        proficiency = request.POST["proficiencyRadio"]
+        hourlyPrice = request.POST["hourlyPrice"]
+        fixedPrice = request.POST["fixedPrice"]
+        country = request.POST["country"]
 
-        userInfo = UserInfo(title=title, category=category, skills=skills, expertiseRadio=expertiseRadio, company=company, location=location, state=state, zip=zip, designation=designation)
+        userInfo = UserInfo(user=user, title=title, category=category, skills=skills, expertiseRadio=expertiseRadio, company=company, location=location, state=state, zip=zip, designation=designation, description=description, university=university, areaOfStudy=areaOfStudy, degree=degree, certification=certification, language=language, proficiency=proficiency, hourlyPrice=hourlyPrice, fixedPrice=fixedPrice, country=country)
         userInfo.save()
+        return redirect("dashboard")
     return render(request, 'SloggleUI/register.html')
 
 
@@ -127,10 +141,13 @@ def login_user(request):
 
 def dashboard(request):
     if not request.user.is_authenticated:
-        print(request.user)
-        print(request.user.is_authenticated)
         return HttpResponse("Unauthorized User.")
-    return render(request, "SloggleUI/dashboard.html")
+    isUserInfoThere = UserInfo.objects.filter(user=request.user).exists()
+    if not isUserInfoThere:
+        return render(request, 'SloggleUI/makeYourChoice.html')
+    else:
+        userInfo = UserInfo.objects.get(user=request.user)
+        return render(request, "SloggleUI/dashboard.html", {"userInfo": userInfo})
 
 
 def logout_user(request):

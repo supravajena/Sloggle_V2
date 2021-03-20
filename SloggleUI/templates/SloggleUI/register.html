@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,13 +29,6 @@
             <label for="exampleDataList" class="form-label">Title</label>
             <input class="form-control" list="datalistOptions" id="exampleDataList"
                 name="title" placeholder="Type to search...">
-            <datalist id="datalistOptions">
-                <option value="Software Developer">
-                <option value="Software Tester">
-                <option value="Network Engineer">
-                <option value="DBA">
-                <option value="Web Developer">
-            </datalist>
         </div>
 
         <div class="row registrationFormWrapper">
@@ -52,32 +46,9 @@
             <label for="exampleDataList" class="form-label"> Skills</label>
             <input class="form-control" list="datalistSkills" id="exampleSkills"
                 name="skills" placeholder="Type to search...">
-            <datalist id="datalistSkills">
-                <option value="java">
-                <option value="Python">
-                <option value="C++">
-                <option value="C">
-                <option value="HTML">
-            </datalist>
-
         </div>
 
         <div class="row registrationFormWrapper">
-            <!-- <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                value="option1">
-                <label class="form-check-label" for="inlineRadio1" style="color: white ">Entry Level</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                value="option2">
-                <label class="form-check-label" for="inlineRadio2" style="color: white">Intermediate Level</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                value="option3">
-                <label class="form-check-label" for="inlineRadio3" style="color: white">Expert Level</label>
-            </div> -->
             <div style="padding: 0;">
                 <span style="display: inline-block; margin-right: 5vw;">Expertise Level</span>
                 <div class="form-check form-check-inline">
@@ -93,8 +64,6 @@
                     <label class="form-check-label" for="inlineradio3">Expert Level</label>
                 </div>
             </div>
-
-
         </div>
 
         <div class="row registrationFormWrapper">
@@ -110,10 +79,7 @@
             </div>
             <div class="col mx-3" style="padding-right: 0; padding-left: 0;">
                 <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select" name="state">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
+                <input type="text" class="form-control" name="state" id="inputState" placeholder="Enter state">
             </div>
             <div class="col ml-3" style="padding-right: 0; padding-left: 0;">
                 <label for="inputZip" class="form-label">Zip</label>
@@ -125,14 +91,6 @@
             <label for="exampleDataList2" class="form-label"> Designation</label>
             <input class="form-control" list="datalistOptions" name="designation" id="exampleDataList2"
                 placeholder="Type to search...">
-            <datalist id="datalistOptions">
-                <option value="java">
-                <option value="Python">
-                <option value="C++">
-                <option value="C">
-                <option value="HTML">
-            </datalist>
-
         </div>
         <div class="row registrationFormWrapper">
             <div class="form-check">
@@ -145,7 +103,7 @@
         <div class="row registrationFormWrapper">
             <label for="comment"><b>Description:</b></label>
             <textarea class="form-control" rows="5" id="comment"
-                placeholder="Describe about yourself"></textarea>
+                name="description" placeholder="Describe about yourself"></textarea>
         </div>
 
         
@@ -153,105 +111,30 @@
             <p style="padding: 0;">Educational(optional)please enter manually</p>
             <label for="inputAddress2" class="form-label"><b>University</b></label>
             <input type="text" class="form-control" id="inputAddress2"
-                placeholder="Type to search.." style="padding: .375rem .75rem;">
+                placeholder="Type to search.." name="university" style="padding: .375rem .75rem;">
         </div>
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label"><b> Area of
                     study</b></label>
             <input class="form-control" list="datalistArea" id="exampleDataList" 
-                placeholder="Type to search...">
-            <datalist id="datalistArea">
-                <option value="Computer Science">
-                <option value="Machine learning">
-                <option value="Data Science">
-                <option value="Big Data">
-                <option value="Database">
-            </datalist>
+                name="areaOfStudy" placeholder="Type to search...">
         </div>
 
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label"><b> Degree</b></label>
             <input class="form-control" list="datalistDegree" id="exampleDataList" 
-                placeholder="Type to search...">
-            <datalist id="datalistDegree">
-                <option value="MCA">
-                <option value="BCA">
-                <option value="M-tech">
-                <option value="B-Tech">
-            </datalist>
+                placeholder="Type to search..." name="degree">
         </div>
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label"
                 ><b>Certification</b></label>
             <input class="form-control" list="datalistCertificate" id="exampleDataList"
-                placeholder="Type to search...">
-            <datalist id="datalistCertificate">
-                <option value="CCNA">
-                <option value="Java Programming">
-                <option value="Python programming">
-                <option value="Web Development">
-                <option value="Machine Learning">
-                <option value="CIW:JavaScript v2.0">
-                <option value="Networking  & Linux Administration">
-                <option value="Web Programming in ASP.net using C#">
-                <option value="Text And Web Analyst">
-                <option value="Full Stack Web Development">
-                <option value="Mobile Application Development">
-                <option value="Applied Computer Science">
-                <option value="Agile Project Management">
-                <option value="Internet of Things:Application and Opportunities">
-                <option value="Web Design">
-                <option value="Microsoft office 2016 Mega Bundle">
-                <option value="Cloud Computing and Machine Learning">
-                <option value="Machine & Deep Learning">
-                <option value="Excel For Business">
-                <option value="Introduction to programming in C">
-                <option value="Microsoft Office Fundamental for Business">
-                <option value="Software Design For Organizational Decision Making">
-                <option value="Computer Science & Mobile Apps">
-                <option value="Computer Science For Game Development">
-                <option value="Cloud Computing with Amazon Web Services(AWS) Courses">
-                <option value="Python Programming For Data Science and Web">
-                <option value="Web Design Course With HTML5,CSS3 and JavaScript">
-                <option value="Web Development Bootcamp">
-                <option value="System Design">
-                <option value="JAVA Backend Development">
-                <option value="Machine Learning Foundation With Python">
-                <option value="Full Stack Development With React & Node JS ">
-                <option value="Competitive 	Programming">
-                <option value="Java App Development">
-                <option value="Android App Development ">
-                <option value="Ethical Hacking and Cyber Security Fundamental">
-                <option value="Object Oriented Design and Design Pattern">
-                <option value="iOS APP Development">
-
-                <option value="Big Data with Hadoop Ecosystem">
-                <option value="Full Stack Development">
-                <option value="Advanced Front-end Web Development">
-                <option value="Django:Web Development with Python">
-                <option value="DSA Foundation">
-                <option value="Data Structure With Python">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-                <option value="">
-
-
-
-            </datalist>
+                placeholder="Type to search..." name="certification">
         </div>
 
         <div class="row registrationFormWrapper">
             <label for="inputLanguage" class="form-label"><b>Language</b></label>
-            <input type="text" class="form-control" id="inputLanguage" placeholder="English" style="padding: .375rem .75rem;">
+            <input type="text" class="form-control" id="inputLanguage" name="language" placeholder="English" style="padding: .375rem .75rem;">
         </div>
 
         <div class="row registrationFormWrapper">
@@ -278,7 +161,7 @@
                 <label for="priceInputField" class="form-label">Hourly Price</label>
                 <div class="input-group" style="padding: 0;">
                     <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="priceInputField" aria-label="Amount (to the nearest dollar)" style="margin: 0;">
+                    <input type="text" class="form-control" id="priceInputField" name="hourlyPrice" aria-label="Amount (to the nearest dollar)" style="margin: 0;">
                     <span class="input-group-text">.00</span>
                 </div>
             </div>
@@ -286,7 +169,7 @@
                 <label for="priceInputField" class="form-label">Fixed Price</label>
                 <div class="input-group" style="padding: 0;">
                     <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="priceInputField" aria-label="Amount (to the nearest dollar)" style="margin: 0;">
+                    <input type="text" class="form-control" id="priceInputField" name="fixedPrice" aria-label="Amount (to the nearest dollar)" style="margin: 0;">
                     <span class="input-group-text">.00</span>
                 </div>
             </div>
@@ -297,7 +180,7 @@
 
         <div class="row registrationFormWrapper">
             <label for="exampleDataList" class="form-label"><b>Country</b></label>
-            <input class="form-control" list="datalistCountry" id="exampleDataList"
+            <input class="form-control" list="datalistCountry" name="country" id="exampleDataList"
                 placeholder="Type to search...">
             <datalist id="datalistCountry">
                 <option value="	Afghanistan">
@@ -523,6 +406,9 @@
     
     </form>
     </div>
+  </div>
+  </form>
+  </div>
 
     <!-- TODO: Move this to main JS file -->
     <script>
@@ -549,4 +435,5 @@
     </script>
     
 </body>
+
 </html>

@@ -9,7 +9,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="{% static 'SloggleUI/main.css' %}">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -19,6 +21,43 @@
     <style>
         .dropdown-toggle::after {
             display: none;
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            /* border: 1px solid #ccc; */
+            background-color: #000000;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #495057;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #495057;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            /* border: 1px solid #ccc; */
+            border-top: none;
         }
     </style>
     <script>
@@ -46,15 +85,19 @@
                 </div>
                 <div class="d-flex">
                     <div class="dropdown">
-                        <div class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="height: 100px; width: 100px; background-color: #495057; border-radius: 50%;">
+                        <div class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            style="height: 60px; width: 60px; background-color: #495057; border-radius: 50%;">
                         </div>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                          <li><a class="dropdown-item active" href="#">Edit Profile</a></li>
-                          <li><a class="dropdown-item" href="#">Settings</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></li>
+                            <li><a class="dropdown-item active" href="#">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></li>
                         </ul>
-                      </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -87,30 +130,102 @@
         </div>
     </div> -->
 
-    <main style="padding-top: 1.5rem; height: 600px;">
-        {# user icon and welcom #}
+    <main style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+        {# user icon and welcome #}
         <div class="container">
-            <span
-                style="display: inline-block; height: 50px; width: 50px; background-color: #000000; border-radius: 50%;">
-                <span
-                    style="display: inline-block; height: 10px; width: 10px; background-color: #00ff00; border-radius: 50%; position: relative; transform: translateX(40px) translateY(30px);"></span>
-            </span>
-            <span
-                style="display: inline-block; position: relative; transform: translateY(20px); margin-left: 1.5rem; font-size: 1.3rem;">
-                Welcome, {{ request.user }} !
-            </span>
+            <div class="row">
+                <div class="col-1">
+                    <span
+                        style="display: inline-block; height: 100px; width: 100px; background-color: #000000; border-radius: 50%;">
+                        <span
+                            style="display: inline-block; height: 10px; width: 10px; background-color: #00ff00; border-radius: 50%; position: relative; transform: translateX(85px) translateY(70px);"></span>
+                    </span>
+                </div>
+                <div class="col-11">
+                    <span
+                        style="display: inline-block; position: relative; transform: translateY(10px); margin-left: 1.5rem; font-size: 1.3rem;">
+                        Welcome, {{ request.user.first_name }} {{ request.user.last_name }} ! <br>
+                        <span style="font-size: 0.8rem;">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span style="padding-left: 0.5rem;"> {{ userInfo.location }}, {{ userInfo.state }} </span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+
         </div>
 
         {# mail container #}
         <div class="container mt-4">
-            <div class="card" style="height: 470px; overflow-x: hidden; overflow-y: auto">
-
-                <div class="d-flex justify-content-around" style="padding: 12px 0; border-bottom: 2px solid #000000;">
-                    <div>Inbox</div>
-                    <div>Ongoing</div>
-                    <div>Jobs Completed</div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card shadow-sm" style="height: 600px;">
+                        <div class="card-header">
+                            Details
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex">Degree: {{ userInfo.degree }}</div>
+                            <div class="d-flex">Skills: {{ userInfo.skills }}</div>
+                            <div class="d-flex">Experience: {{ userInfo.expertiseRadio }}</div>
+                            <div class="d-flex">Certifications: {{ userInfo.certification }}</div>
+                            <div class="d-flex">Hourly Rate: $ {{ userInfo.hourlyPrice }}</div>
+                            <div class="d-flex">Verifications</div>
+                            <div class="d-flex">Email: {{ userInfo.user.email }}</div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col">
+                    <div class="card shadow-sm" style="height: 600px;">
+                        <div class="d-flex tab">
+                            <button class="tablinks" onclick="openCity(event, 'London')">Inbox</button>
+                            <button class="tablinks" onclick="openCity(event, 'Paris')">Ongoing Jobs</button>
+                            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Jobs Completed</button>
+                        </div>
 
+                        <div id="London" class="tabcontent">
+                            <div class="d-flex align-items-center" style="height: 60px; border-top: 2px solid #495057; border-bottom: 2px solid #495057;">
+                                Email will show up here
+                            </div>
+                        </div>
+
+                        <div id="Paris" class="tabcontent">
+                            <div class="d-flex justify-content-start">
+                                <div class="card" style="height: 300px; width: 66.6%; background-color: #495057; margin-top: 2rem;">
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center align-items-center" height="100%">
+                                                <img src="{% static 'SloggleUI/no_data_found.svg' %}" alt="No Data Found" height="200px">
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="Tokyo" class="tabcontent">
+                            <div class="d-flex justify-content-start">
+                                <div class="card" style="height: 300px; width: 66.6%; background-color: #495057; margin-top: 2rem;">
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center align-items-center" height="100%">
+                                                <img src="{% static 'SloggleUI/no_data_found.svg' %}" alt="No Data Found" height="200px">
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div class="col-3">
+                    
+                    <div class="card shadow-sm" style="height: 600px;">
+    
+                    </div>
+                </div> -->
             </div>
         </div>
     </main>
@@ -176,6 +291,22 @@
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 
