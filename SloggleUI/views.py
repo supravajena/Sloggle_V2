@@ -101,11 +101,17 @@ def register(request):
         category = request.POST["category"]
         skills = request.POST["skills"]
         expertiseRadio = request.POST["expertiseRadio"]
-        company = request.POST["company"]
+        if "company" in request.POST:
+            company = request.POST["company"]
+        else:
+            company = "NA"
         location = request.POST["location"]
         state = request.POST["state"]
         zip = request.POST["zip"]
-        designation = request.POST["designation"]
+        if "designation" in request.POST:
+            designation = request.POST["designation"]
+        else:
+            designation = "NA"
         description = request.POST["description"]
         university = request.POST["university"]
         areaOfStudy = request.POST["areaOfStudy"]
