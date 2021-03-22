@@ -152,8 +152,10 @@
             </div>
 
                 {# user result card #}
-                {% for userInfo in userInfos %}
-                <div class="col-3">
+                <div class="col-9">
+                  <div class="row">
+                    {% for userInfo in userInfos %}
+                <div class="col-4">
                   <div class="card card-light" style="height: 60vh; overflow-y: auto;">
                       <div class="card-img-top">
                           <div style="margin: 1.5rem auto; height: 150px; width: 150px; border-radius: 50%; background-color: #5b6773;"></div>
@@ -173,6 +175,8 @@
                   </div>
                 </div>
                 {% endfor %}
+                  </div>
+                </div>
                 <!-- </div>
                 <div class="col-3">
                     <div class="card card-light" style="height: 60vh; overflow-y: auto;">

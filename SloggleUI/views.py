@@ -9,8 +9,6 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.auth import authenticate, login, logout
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
 
 from .models import UserInfo
 
@@ -122,8 +120,9 @@ def register(request):
         hourlyPrice = request.POST["hourlyPrice"]
         fixedPrice = request.POST["fixedPrice"]
         country = request.POST["country"]
+        profilePicture = request.FILES["profilePicture"]
 
-        userInfo = UserInfo(user=user, title=title, category=category, skills=skills, expertiseRadio=expertiseRadio, company=company, location=location, state=state, zip=zip, designation=designation, description=description, university=university, areaOfStudy=areaOfStudy, degree=degree, certification=certification, language=language, proficiency=proficiency, hourlyPrice=hourlyPrice, fixedPrice=fixedPrice, country=country)
+        userInfo = UserInfo(user=user, title=title, category=category, skills=skills, expertiseRadio=expertiseRadio, company=company, location=location, state=state, zip=zip, designation=designation, description=description, university=university, areaOfStudy=areaOfStudy, degree=degree, certification=certification, language=language, proficiency=proficiency, hourlyPrice=hourlyPrice, fixedPrice=fixedPrice, country=country, profilePicture=profilePicture)
         userInfo.save()
         return redirect("dashboard")
     return render(request, 'SloggleUI/register.html')
